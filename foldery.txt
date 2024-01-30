@@ -1,0 +1,30 @@
+Układ systemu plików w systemie Linux jest bardzo podobny do tego, który znajduje się w innych systemach typu Unix. Projekt jest faktycznie określony w opublikowanym standardzie o nazwie Linux Filesystem Hierarchy Standard. Nie wszystkie dystrybucje Linuxa dokładnie się do niego stosują, ale większość jest dość bliska.
+
+Podczas wędrówki nie bójmy się przyjrzeć rzeczom. Zwykłym użytkownikom w dużej mierze zabroniono psucia rzeczy. To praca administratora systemu! Jeśli polecenie narzeka na coś, po prostu przejdźmy do czegoś innego. Spędźmy trochę czasu na rozglądaniu się. System jest nasz do zbadania. Pamiętaj, że w Linuxie nie ma tajemnic!
+
+Poniżej wymieniono tylko kilka katalogów, które możemy zbadać. Mogą występować pewne drobne różnice w zależności od naszej dystrybucji Linuxa. Nie bój się rozejrzeć i spróbować więcej!
+
+/ - Katalog główny, gdzie wszystko się zaczyna.
+/bin - Zawiera binaria (programy), które muszą być obecne, aby system mógł się uruchomić i działać.
+/boot - Zawiera jądro Linuxa, obraz początkowego dysku RAM (dla sterowników potrzebnych podczas uruchamiania) i program rozruchowy. Ciekawe pliki to /boot/grub/grub.conf lub menu.lst, służące do konfiguracji programu rozruchowego, oraz /boot/vmlinuz (lub coś podobnego), jądro Linuxa.
+/dev - To specjalny katalog, który zawiera węzły urządzeń. „Wszystko jest plikiem” dotyczy również urządzeń. Tutaj jądro utrzymuje listę wszystkich urządzeń, które rozumie.
+/etc - Katalog /etc zawiera wszystkie pliki konfiguracyjne systemu. Zawiera także zbiór skryptów powłoki, które uruchamiają każdą z usług systemowych podczas uruchamiania. Wszystko w tym katalogu powinno być czytelnym tekstem. Chociaż wszystko w /etc jest interesujące, oto kilka ulubionych: /etc/crontab, plik definiujący, kiedy będą uruchamiane zautomatyzowane zadania; /etc/fstab, tabela urządzeń przechowywania i ich powiązanych punktów montowania; oraz /etc/passwd, lista kont użytkowników.
+/home - W normalnych konfiguracjach każdy użytkownik otrzymuje katalog w /home. Zwykli użytkownicy mogą zapisywać pliki tylko w swoich katalogach domowych. Ograniczenie to chroni system przed błędną działalnością użytkownika.
+/lib - Zawiera współdzielone pliki bibliotek używane przez podstawowe programy systemowe. Są one podobne do dynamicznych bibliotek łączeń (DLL) w systemie Windows.
+/lost+found - Każda sformatowana partycja lub urządzenie korzystające z systemu plików Linux, takiego jak ext3, będzie miało ten katalog. Jest on używany w przypadku częściowego odzyskiwania z zdarzenia uszkodzenia systemu plików. Chyba że coś naprawdę złego stało się z twoim systemem, ten katalog pozostanie pusty.
+/media - W nowoczesnych systemach Linux katalog /media będzie zawierał punkty montowania wymiennych nośników, takich jak dyski USB, CD-ROMy itp., które są montowane automatycznie po włożeniu.
+/mnt - W starszych systemach Linux katalog /mnt zawiera punkty montowania urządzeń wymiennych, które zostały zamontowane ręcznie.
+/opt - Katalog /opt służy do instalacji „opcjonalnego” oprogramowania. Jest to głównie używane do przechowywania produktów komercyjnych, które mogą być zainstalowane w systemie.
+/proc - Katalog /proc jest specjalny. To nie jest prawdziwy system plików w sensie plików przechowywanych na dysku twardym. Raczej jest to wirtualny system plików utrzymywany przez jądro Linuxa. „Pliki”, które zawiera, są dziurkami w jądrze. Pliki są czytelne i dadzą ci obraz tego, jak jądro widzi nasz komputer.
+/root - To jest katalog domowy dla konta root.
+/sbin - Ten katalog zawiera „systemowe” binaria. Są to programy, które wykonują kluczowe zadania systemowe, które są zwykle zarezerwowane dla superużytkownika.
+/tmp - Katalog /tmp jest przeznaczony do przechowywania tymczasowych, przelotnych plików tworzonych przez różne programy. Niektóre konfiguracje powodują, że ten katalog jest opróżniany za każdym razem, gdy system jest uruchamiany ponownie.
+/usr - Drzewo katalogów /usr prawdopodobnie jest największe w systemie Linux. Zawiera wszystkie programy i pliki pomocnicze używane przez zwykłych użytkowników.
+/usr/bin - /usr/bin zawiera programy wykonywalne zainstalowane przez dystrybucję Linuxa. Nie jest rzadkością, że ten katalog zawiera tysiące programów.
+/usr/lib - Współdzielone biblioteki dla programów w /usr/bin.
+/usr/local - /usr/local to miejsce, gdzie instalowane są programy, które nie są dołączone do dystrybucji, ale są przeznaczone do użytku na całym systemie. Programy skompilowane ze źródła są zwykle instalowane w /usr/local/bin. W nowo zainstalowanym systemie Linux to drzewo istnieje, ale będzie puste, dopóki administrator systemu nie umieści w nim czegoś.
+/usr/sbin - Zawiera więcej programów administracyjnych systemu.
+/usr/share - /usr/share zawiera wszystkie współdzielone dane używane przez programy w /usr/bin. Obejmuje to takie rzeczy jak domyślne pliki konfiguracyjne, ikony, tła ekranu, pliki dźwiękowe itp.
+/usr/share/doc - Większość pakietów zainstalowanych na systemie będzie zawierała jakiś rodzaj dokumentacji. W /usr/share/doc - znajdziemy pliki dokumentacji zorganizowane według pakietu.
+/var - Z wyjątkiem /tmp i /home, katalogi, które do tej pory oglądaliśmy, pozostają stosunkowo statyczne; to znaczy, że ich zawartość się nie zmienia. Drzewo katalogów /var to miejsce, gdzie przechowywane są dane, które prawdopodobnie się zmienią. Różne bazy danych, pliki spool, poczta użytkowników itp. znajdują się tutaj.
+/var/log - /var/log zawiera pliki dziennika, zapisy różnej aktywności systemowej. Są one ważne i należy je monitorować od czasu do czasu. Najbardziej przydatne są /var/log/messages i /var/log/syslog.Ze  względów bezpieczeństwa na niektórych systemach musimy być superużytkownikiem, aby wyświetlić pliki dziennika.
