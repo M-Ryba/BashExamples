@@ -1,0 +1,17 @@
+cat
+chown
+comm
+cut
+diff
+echo
+grep
+head
+join
+ln
+ls
+paste
+patch
+sort
+tail
+tr
+uniq
