@@ -13,7 +13,6 @@ fi
 #Pobierze dwie liczby całkowite większe od zera i wyświetli ich średnią arytmetyczną, która jest liczbą całkowitą.
 #W przypadku podania liczby ujemnej program powinien wypisać komunikat: BŁĄD
 
-#!/bin/bash
 read -p "Podaj pierwszą liczbę:" liczba1
 read -p "Podaj drugą liczbę:" liczba2
 if [ "$liczba1" -lt "0" ] || [ "$liczba2" -lt "0" ]; then
